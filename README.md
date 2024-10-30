@@ -1,5 +1,5 @@
-## Next.js App Router Course - Starter
+## Mental Health Support System- WellNest
 
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
+This is the software engineering project website with an objective of Mental Health Support for people.
 
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+This project is known as WellNest.
