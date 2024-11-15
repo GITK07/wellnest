@@ -5,9 +5,8 @@ import {
   InvoiceForm,
   InvoicesTable,
   LatestInvoiceRaw,
-  Revenue,
+  Moods,
 } from './definitions';
-import { formatCurrency } from './utils';
 
 export async function fetchRevenue() {
   try {
@@ -17,7 +16,7 @@ export async function fetchRevenue() {
     console.log('Fetching revenue data...');
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    const data = await sql<Revenue>`SELECT * FROM revenue`;
+    const data = await sql<Moods>`SELECT * FROM revenue`;
 
     console.log('Data fetch completed after 3 seconds.');
 
@@ -39,7 +38,7 @@ export async function fetchLatestInvoices() {
 
     const latestInvoices = data.rows.map((invoice) => ({
       ...invoice,
-      amount: formatCurrency(invoice.amount),
+      amount: invoice.amount,
     }));
     return latestInvoices;
   } catch (error) {
@@ -68,8 +67,8 @@ export async function fetchCardData() {
 
     const numberOfInvoices = Number(data[0].rows[0].count ?? '0');
     const numberOfCustomers = Number(data[1].rows[0].count ?? '0');
-    const totalPaidInvoices = formatCurrency(data[2].rows[0].paid ?? '0');
-    const totalPendingInvoices = formatCurrency(data[2].rows[0].pending ?? '0');
+    const totalPaidInvoices = data[2].rows[0].paid ?? '0';
+    const totalPendingInvoices = data[2].rows[0].pending ?? '0';
 
     return {
       numberOfCustomers,
@@ -205,8 +204,8 @@ export async function fetchFilteredCustomers(query: string) {
 
     const customers = data.rows.map((customer) => ({
       ...customer,
-      total_pending: formatCurrency(customer.total_pending),
-      total_paid: formatCurrency(customer.total_paid),
+      total_pending: customer.total_pending,
+      total_paid: customer.total_paid,
     }));
 
     return customers;
