@@ -1,5 +1,3 @@
-// This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
-// https://nextjs.org/learn/dashboard-app/fetching-data
 const users = [
   {
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
@@ -129,19 +127,14 @@ const invoices = [
   },
 ];
 
-const revenue = [
-  { month: 'Jan', revenue: 2000 },
-  { month: 'Feb', revenue: 1800 },
-  { month: 'Mar', revenue: 2200 },
-  { month: 'Apr', revenue: 2500 },
-  { month: 'May', revenue: 2300 },
-  { month: 'Jun', revenue: 3200 },
-  { month: 'Jul', revenue: 3500 },
-  { month: 'Aug', revenue: 3700 },
-  { month: 'Sep', revenue: 2500 },
-  { month: 'Oct', revenue: 2800 },
-  { month: 'Nov', revenue: 3000 },
-  { month: 'Dec', revenue: 4800 },
+const moodChart = [
+  { Day: 'Mon', moodVal: 3 },
+  { Day: 'Tues', moodVal: 8 },
+  { Day: 'Wed', moodVal: 7 },
+  { Day: 'Thur', moodVal: 4 },
+  { Day: 'Fri', moodVal: 8 },
+  { Day: 'Sat', moodVal: 5 },
+  { Day: 'Sun', moodVal: 9 },
 ];
 
-export { users, customers, invoices, revenue };
+export { users, customers, invoices, moodChart };

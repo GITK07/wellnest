@@ -4,7 +4,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { Moods } from '@/app/lib/definitions';
 
 
-export default async function RevenueChart({
+export default async function MoodChart({
   moodRate,
 }: {
   moodRate: Moods[];
