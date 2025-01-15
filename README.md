@@ -1,4 +1,4 @@
-# WwllNest: Mental Health Support System 
+# WellNest: Mental Health Support System 
 
 ## Introduction
 
